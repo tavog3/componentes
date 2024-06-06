@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin</title>
+    <link rel="stylesheet" href="./styles/LstEven.css" />
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <div class="LstEven-container">
+        <div class="LstEven-name_company"></div>
+        <div class="LstEven-container_content">
+            <div class="LstEven-div_event_company">
+                <p class="LstEven-title">Lista de Eventos</p>
+                <div class="LstEven-container_evento">
+                    <!-- Los eventos se agregarán dinámicamente aquí -->
+                </div>
+                <button id="LstEven-openModal"><i class="bx bx-notepad"></i></button>
+            </div>
+        </div>
+        <!-- modal detalles evento -->
+        <div id="LstEven-modal_detail_event" class="LstEven-modal">
+            <div class="LstEven-modal-content">
+                <span class="LstEven-close">&times;</span>
+                <span class="LstEven-edit" 
+                      onclick="openEditModal(this)"
+                      data-title="Título del evento a editar"
+                      data-date="Fecha del evento a editar"
+                      data-time="Hora del evento a editar"
+                      data-description="Descripción del evento a editar">
+                    <i class="bx bx-edit"></i>
+                </span>
+                <h2 id="LstEven-modal-title" class="LstEven-mod_tilte">Título del evento</h2>
+                <div class="LstEven-detail_date_time">
+                    <p id="LstEven-modal-date" class="LstEven-mod_date"><i class='bx bx-calendar'></i></p>
+                    <p id="LstEven-modal-time" class="LstEven-mod_time"><i class='bx bx-time'></i></p>
+                </div>
+                <p id="LstEven-modal-detail" class="LstEven-mod_detail"></p>
+            </div>
+        </div>
+        <!-- form modal -->
+        <div id="LstEven-myModal" class="LstEven-modal">
+            <div class="LstEven-modal-content">
+                <span class="LstEven-close_form">&times;</span>
+                <form id="LstEven-eventForm">
+                    <label for="LstEven-title">Titulo del evento:</label>
+                    <input type="text" id="LstEven-title" name="title" />
+                    <label for="LstEven-date">Fecha del evento:</label>
+                    <input type="date" id="LstEven-date" name="date" />
+                    <label for="LstEven-time">Hora del evento:</label>
+                    <input type="time" id="LstEven-time" name="time" />
+                    <label for="LstEven-description">Descripción del evento:</label>
+                    <textarea id="LstEven-description" name="description"></textarea>
+                    <input type="submit"   value="Guardar" >
+                    <i class='bx bx-check'></i>
+                </form>
+            </div>
+        </div>
+        <!-- Modal de edición -->
+        <div id="LstEven-editModal" class="LstEven-modal">
+            <div class="LstEven-modal-content">
+                <span class="LstEven-close_forme">&times;</span>
+                <form id="LstEven-editEventForm">
+                    <label for="LstEven-edit_title">Título del evento:</label>
+                    <input type="text" id="LstEven-edit_title" name="edit_title" />
+                    <label for="LstEven-edit_date">Fecha del evento:</label>
+                    <input type="date" id="LstEven-edit_date" name="edit_date" />
+                    <label for="LstEven-edit_time">Hora del evento:</label>
+                    <input type="time" id="LstEven-edit_time" name="edit_time" />
+                    <label for="LstEven-edit_description">Descripción del evento:</label>
+                    <textarea id="LstEven-edit_description" name="edit_description"></textarea>
+                    <input type="submit" value="Editar" />
+                    <i class='bx bx-check'></i>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="./js/LstEven.js"></script>
+</body>
+</html>

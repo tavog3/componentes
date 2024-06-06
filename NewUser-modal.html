@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuevo usuario</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="./styles/NewUser-modal.css">
+</head>
+<body>
+    <div id="NewUser-modal" class="NewUser-modal">
+        <div class="AdmNwUs-profile">
+            <div class="AdmNwUs-continer">
+            <h2 class="AdmNwUsTitle">Nuevo Usuario</h2>
+            <img src="./assets/profile-pic.jpg" alt="AdmNwUsProfile Picture" class="AdmNwUsProfile-pic" id="AdmNwUsProfile-pic">
+            <label class="AdmNwUsUpload-btn" for="photo-AdmNwUsUpload">
+                <i class='bx bx-edit' style='color:#ffffff'></i>Foto</label>
+            <input type="file" id="photo-AdmNwUsUpload" name="photo" accept="image/jpeg, image/png, image/jpg" style="display: none;">
+        </div>
+            <form id="AdmNwUs-info" class="AdmNwUs active">
+                <div class="AdmNwUs-row">
+                    <div class="AdmNwUs-group">
+                        <label for="full-name">Nombre Completo</label>
+                        <input type="text" id="full-name" name="full-name" value="James">
+                    </div>
+                    <div class="AdmNwUs-group">
+                        <label for="username">Nombre de Usuario</label>
+                        <input type="text" id="username" name="username" value="Allan">
+                    </div>
+                </div>
+                <div class="AdmNwUs-row">
+                    <div class="AdmNwUs-group">
+                        <label for="role">Role</label>
+                        <input type="role" id="role" name="role">
+                    </div>
+                    <div class="AdmNwUs-group">
+                        <label for="sucursal">Sucursal</label>
+                        <input type="sucursal" id="sucursal" name="sucursal">   
+                    </div>
+                </div>
+                <div class="AdmNwUs-row">
+                    <div class="AdmNwUs-group">
+                        <label for="confirm-email">Email</label>
+                        <input type="email" id="confirm-email" name="confirm-email" value="demo@mail.com">
+                    </div>
+                    <div class="AdmNwUs-group">
+                        <label for="phone">Teléfono</label>
+                        <input type="tel" id="phone" name="phone" pattern="[0-9]+" title="Ingrese solo números" maxlength="10" inputmode="numeric">
+
+                    </div>
+                </div>
+                <div class="AdmNwUs-row">
+                    <div class="AdmNwUs-group">
+                        <label for="id">Identification</label>
+                        <input type="id" id="id" name="id" pattern="[0-9]+" title="Ingrese solo números" maxlength="10" inputmode="numeric">
+                    </div>
+                    <div class="AdmNwUs-group">
+                        <label for="Tid">Tipo</label>
+                        <select id="Tid" name="Tid" class="Tid">
+                            <option value="cc">C.C</option>
+                            <option value="ext">EXT</option>
+                        </select>
+                    </div>
+                </div>
+                <button type="AdmNwUsSubmit" class="AdmNwUsUpdate-btn">ACTUALEZAR</button>
+                <button type="AdmNwUsSubmit" class="AdmNwUsCancel-btn">CANCELAR</button>
+            </form>
+        </div>
+    </div>
+</div>
+<script src="./js/NewUser-modal.js"></script>
+</body>
+</html>

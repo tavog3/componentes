@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./styles/explore.css">
+    <title>File Explorer</title>
+</head>
+<body>
+    <div id="main-content" class="content-with-actions" >
+        <div class="toolbar">
+            <div class="action-bar">
+                <button id="fe-new-directory-btn" class="fe-btn">
+                    <i class='bx bx-folder-plus'></i> Nuevo directorio
+                </button>
+                <button id="fe-upload-btn" class="fe-btn">
+                    <i class='bx bx-upload'></i> Subir archivos
+                </button>
+            </div>
+            <div class="view-refresh-bar">
+                <button id="fe-refresh-btn" class="fe-btn">
+                    <i class='bx bx-refresh'></i>
+                </button>
+            </div>
+        </div>
+        <div class="additional-actions" style="display: none;">
+            <button id="fe-move-btn" class="fe-btn">
+                <i class='bx bxs-move'></i> Mover
+            </button>
+            <button id="fe-copy-btn" class="fe-btn">
+                <i class='bx bxs-copy'></i> Copiar
+            </button>
+            <button id="fe-edit-btn" class="fe-btn">
+                <i class='bx bxs-edit'></i> Editar
+            </button>
+            <button id="fe-delete-btn" class="fe-btn">
+                <i class='bx bxs-trash'></i> Borrar
+            </button>
+            <button id="fe-close-selection-btn" class="fe-btn">
+                <i class='bx bxs-x-square'></i> Cerrar Selección
+            </button>
+        </div>
+        <div id="breadcrumb"></div>
+        <div id="file-list-container">
+            <ul id="file-list">
+                <li class="file-header">
+                    <input type="checkbox" id="select-all">
+                    <span>Name</span>
+                    <span>Date Modified</span>
+                    <span>File Size</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Modal para nuevo directorio -->
+    <div id="fe-modal-new-directory" class="fe-modal">
+        <div class="fe-modal-content">
+            <span id="fe-close-modal" class="fe-close">&times;</span>
+            <h2>Nuevo Directorio</h2>
+            <input type="text" id="fe-directory-name" placeholder="Nombre del Directorio">
+            <div class="fe-modal-actions">
+                <button id="fe-create-directory">Crear</button>
+                <button id="fe-cancel-directory">Cancelar</button>
+            </div>
+        </div>
+    </div>
+
+<!-- Modal para mover archivos -->
+<div id="fe-modal-move" class="fe-modal">
+    <div class="fe-modal-content">
+        <span id="fe-close-modal-move" class="fe-close">&times;</span>
+        <h2>Mover</h2>
+        <div id="move-breadcrumb"></div> <!-- Barra de navegación -->
+        <div id="move-file-list-container">
+            <ul id="move-file-list">
+                <li class="file-header">
+                    <span>Name</span>
+                </li>
+            </ul>
+        </div>
+        <div class="fe-modal-actions">
+            <button id="fe-move-files">Mover</button>
+            <button id="fe-cancel-move">Cancelar</button>
+        </div>
+    </div>
+</div>
+
+<!-- Modal para copiar archivos -->
+<div id="fe-modal-copy" class="fe-modal">
+    <div class="fe-modal-content">
+        <span id="fe-close-modal-copy" class="fe-close">&times;</span>
+        <h2>Copiar</h2>
+        <div id="copy-breadcrumb"></div> <!-- Barra de navegación -->
+        <div id="copy-file-list-container">
+            <ul id="copy-file-list">
+                <li class="file-header">
+                    <span>Name</span>
+                </li>
+            </ul>
+        </div>
+        <div class="fe-modal-actions">
+            <button id="fe-copy-files">Copiar</button>
+            <button id="fe-cancel-copy">Cancelar</button>
+        </div>
+    </div>
+</div>
+
+
+<!-- Modal para reemplazar archivos -->
+<div id="fe-modal-replace" class="fe-modal">
+    <div class="fe-modal-content">
+        <span id="fe-close-modal-replace" class="fe-close">&times;</span>
+        <h2>Reemplazar Archivo</h2>
+        <p>Ya hay un archivo con el mismo nombre en el destino. ¿Desea reemplazarlo?</p>
+        <div class="fe-modal-actions">
+            <button id="fe-confirm-replace">Reemplazar</button>
+            <button id="fe-cancel-replace">Cancelar</button>
+        </div>
+    </div>
+</div>
+
+<!-- Modal de editar -->
+<div id="edit-modal" class="modal-edit">
+    <div class="modal-edit-content">
+        <span id="close-modal-edit" class="close-edit">&times;</span>
+        <h2>Edit Element</h2>
+        <input type="text" id="edit-element-name" placeholder="Enter new name">
+        <div class="modal-edit-actions">
+            <button id="confirm-edit">Edit</button>
+            <button id="cancel-edit">Cancel</button>
+        </div>
+    </div>
+</div>
+
+
+    <input type="file" id="fe-file-input" style="display:none" multiple>
+
+    <script src="./js/explore.js"></script>
+</body>
+</html>

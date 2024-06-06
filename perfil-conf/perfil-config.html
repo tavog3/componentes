@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Settings</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="perfil-config.css">
+</head>
+<body>
+    <div class="container">
+        <div class="profile-card">
+            <h2 class="full-nameh2"></h2>
+            <p class="userp"></p>
+            <img src="profile-pic.jpg" alt="Profile Picture" class="profile-pic" id="profile-pic">
+            <label class="upload-btn" for="photo-upload">
+                <i class='bx bx-edit' style='color:#ffffff'></i>Foto</label>
+            <input type="file" id="photo-upload" name="photo" accept="image/jpeg, image/png, image/jpg" style="display: none;">
+
+            <p class="upload-info">Sube un nuevo avatar. La imagen más grande cambiará de tamaño automáticamente. El tamaño máximo de carga es 1 MB.</p>
+            <p>Miembro Desde: <span class="member-date">29 septiembre 2019</span></p>
+        </div>
+        <div class="edit-profile">
+            <h2>Edit Prefil</h2>
+            <form id="user-info" class="form active">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="full-name">Nombre Completo</label>
+                        <input type="text" id="full-name" name="full-name" value="James">
+                    </div>
+                    <div class="form-group">
+                        <label for="username">Nombre de Usuario</label>
+                        <input type="text" id="username" name="username" value="Allan">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="role">Role</label>
+                        <input type="role" id="password" name="role" disabled>
+                    </div>
+                    <div class="form-group">
+                        <label for="confirm-password">Contraseña</label>
+                        <input type="password" id="confirm-password" name="confirm-password" value="********" disabled>
+                        <i class='bx bx-edit' id="edit-password-icon"></i>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="confirm-email">Email</label>
+                        <input type="email" id="confirm-email" name="confirm-email" value="demo@mail.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Teléfono</label>
+                        <input type="tel" id="phone" name="phone" pattern="[0-9]+" title="Ingrese solo números" maxlength="10">
+
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="id">Identification</label>
+                        <input type="id" id="id" name="id" pattern="[0-9]+" title="Ingrese solo números" maxlength="10">
+                    </div>
+                    <div class="form-group">
+                        <label for="Tid">Tipo</label>
+                        <select id="Tid" name="Tid">
+                            <option value="cc">C.C</option>
+                            <option value="ext">EXT</option>
+                        </select>
+                    </div>
+                </div>
+                <button type="submit" class="update-btn">ACTUALEZAR</button>
+            </form>
+            <form id="billing-info" class="form">
+                <!-- Aquí iría el formulario de información de facturación -->
+            </form>
+        </div>
+    </div>
+
+    <div id="password-modal" class="modal">
+        <div class="modal-content">
+            <h2>Cambio Contraseña</h2>
+            <form>
+                <div class="form-group">
+                    <label for="current-password">Contraseña Actual</label>
+                    <div class="password-field">
+                    <input type="password" id="current-password" name="current-password">
+                    <i class="bx bx-show" id="show-current-password"></i>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="new-password">Nueva Contraseña</label>
+                    <div class="password-field">
+                    <input type="password" id="new-password" name="new-password">
+                    <i class="bx bx-show" id="show-password"></i>
+                </div>
+                </div>
+                <div class="form-group">
+                    <label for="confirm-new-password">Confirmar Contraseña</label>
+                    <div class="password-field">
+                    <input type="password" id="confirm-new-password" name="confirm-new-password">
+                    <i class="bx bx-show" id="show-new-password"></i>
+                    </div>
+                </div>
+                <div class="modal-buttons">
+                    <button type="button" id="confirm-btn">
+                        <i class='bx bx-check' style='color:#ffffff'  ></i>Confirmar</button>
+                    <button type="button" id="cancel-btn">Cancelar</button>
+
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="perfil-config.js"></script>
+</body>
+</html>

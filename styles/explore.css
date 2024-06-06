@@ -1,0 +1,390 @@
+/* styles/explore.css */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+#breadcrumb {
+    margin: 10px;
+    font-size: 18px;
+}
+
+#breadcrumb span {
+    padding: 5px;
+    cursor: pointer;
+}
+
+#breadcrumb span:hover {
+    background-color: #f0f0f0; /* Cambia el color según tus preferencias */
+    border-radius: 3px;
+}
+
+
+#file-list-container {
+    margin: 10px;
+}
+
+#file-list {
+    list-style: none; 
+    padding: 0;
+    border: 1px solid #ccc;
+}
+
+#file-list li {
+    display: grid;
+    grid-template-columns: 30px 2fr 1fr 1fr;
+    padding: 8px;
+    border-bottom: 1px solid #eee;
+    align-items: center;
+}
+
+#file-list li span {
+    text-align: left; /* Justificar a la izquierda */
+}
+
+#file-list .file-header {
+    font-weight: bold;
+    background-color: #f5f5f5;
+}
+
+#file-list .file-checkbox {
+    margin-right: 10px; /* Reducir el margen */
+}
+
+#file-list .file-header span {
+    margin-right: 5px; /* Eliminar margen adicional en el header */
+}
+
+#file-list .file-header input[type="checkbox"] {
+    margin-left: -10px; /* Mantener el checkbox alineado en el header */
+}
+
+input[type="checkbox"] {
+    margin: 0; /* Reducir el margen del checkbox */
+}
+
+#file-list li:hover {
+    background-color: #f5f5f5;
+}
+
+
+/* New toolbar styles */
+.toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #f5f5f5;
+    border-bottom: 1px solid #ddd;
+}
+
+.action-bar, .view-refresh-bar {
+    display: flex;
+    align-items: center;
+}
+
+.action-bar i, .view-refresh-bar i {
+    margin-right: 1px;
+    margin-left: 1px;
+    cursor: pointer;
+}
+
+
+.fe-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    font-size: 1em;
+    padding: 10px;
+}
+
+.fe-btn i {
+    margin-right: 5px;
+}
+
+.fe-btn:hover {
+    background-color: #737373;
+    color: #ffffff;
+}
+
+/* New styles for modal, etc. */
+/* ... */
+
+.fe-modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+    padding-top: 60px;
+}
+
+.fe-modal-content {
+    background-color: #fefefe;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.fe-close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.fe-close:hover,
+.fe-close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.fe-modal-actions {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.fe-modal-actions button {
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+/* Additional styles for context menu */
+.additional-actions {
+    position: absolute;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    z-index: 1000; /* Asegurarse de que esté por encima de otros elementos */
+}
+
+.additional-actions .fe-btn {
+    display: block;
+    width: 100%;
+    text-align: left;
+    padding: 5px 10px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.additional-actions .fe-btn:hover {
+    background-color: #f0f0f0;
+}
+
+/* Styles for move modal */
+#move-file-list-container {
+    margin: 10px 0;
+    height: 200px;
+    overflow-y: auto;
+    border: 1px solid #ccc;
+}
+
+#move-file-list {
+    list-style: none; 
+    padding: 0;
+    margin: 0;
+}
+
+#move-file-list li {
+    display: grid;
+    grid-template-columns: 1fr;
+    padding: 8px;
+    border-bottom: 1px solid #eee;
+    align-items: center;
+    cursor: pointer;
+    text-align: left; /* Alinear a la izquierda */
+}
+
+#move-file-list li:hover {
+    background-color: #f5f5f5;
+}
+
+#move-file-list .file-header {
+    font-weight: bold;
+    background-color: #f5f5f5;
+}
+
+/* Estilos para la barra de navegación en el modal de mover */
+#move-breadcrumb {
+    margin: 10px 0;
+    font-size: 16px;
+    text-align: left;
+}
+
+#move-breadcrumb span {
+    padding: 5px;
+    cursor: pointer;
+}
+
+#move-breadcrumb span:hover {
+    background-color: #f0f0f0;
+    border-radius: 3px;
+}
+
+
+
+/* Styles for copy modal */
+#copy-file-list-container {
+    margin: 10px 0;
+    height: 200px;
+    overflow-y: auto;
+    border: 1px solid #ccc;
+}
+
+#copy-file-list {
+    list-style: none; 
+    padding: 0;
+    margin: 0;
+}
+
+#copy-file-list li {
+    display: grid;
+    grid-template-columns: 1fr;
+    padding: 8px;
+    border-bottom: 1px solid #eee;
+    align-items: center;
+    cursor: pointer;
+    text-align: left; /* Alinear a la izquierda */
+}
+
+#copy-file-list li:hover {
+    background-color: #f5f5f5;
+}
+
+#copy-file-list .file-header {
+    font-weight: bold;
+    background-color: #f5f5f5;
+}
+
+/* Estilos para la barra de navegación en el modal de copiar */
+#copy-breadcrumb {
+    margin: 10px 0;
+    font-size: 16px;
+    text-align: left;
+}
+
+#copy-breadcrumb span {
+    padding: 5px;
+    cursor: pointer;
+}
+
+#copy-breadcrumb span:hover {
+    background-color: #f0f0f0;
+    border-radius: 3px;
+}
+
+
+/* Styles for replace modal */
+.fe-modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+    padding-top: 60px;
+}
+
+.fe-modal-content {
+    background-color: #fefefe;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px;
+}
+
+.fe-close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.fe-close:hover,
+.fe-close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.fe-modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+
+
+
+/* Estilos para el modal de edición */
+
+
+.modal-edit {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+    padding-top: 60px;
+}
+
+.modal-edit-content {
+    background-color: #fefefe;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.close-edit {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close-edit:hover,
+.close-edit:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-edit-actions {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.modal-edit-actions button {
+    padding: 10px 20px;
+    cursor: pointer;
+}

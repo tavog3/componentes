@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My App</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles/TreeTable.css">
+    <link rel="stylesheet" href="./styles/index.css">
+    <link rel="stylesheet" href="./styles/trash.css">
+
+</head>
+<div id="restore-modal" class="modal">
+    <div class="modal-content">
+        <span id="close-restore-modal" class="close">&times;</span>
+        <h2>Estás seguro que deseas restaurar?</h2>
+        <ul id="restore-file-list"></ul>
+        <button id="confirm-restore" class="btn-confirm green">Confirmar</button>
+        <button id="cancel-restore" class="btn-cancel red">Cancelar</button>
+    </div>
+</div>
+
+<div id="delete-modal" class="modal">
+    <div class="modal-content">
+        <span id="close-delete-modal" class="close">&times;</span>
+        <h2>Estás seguro que deseas eliminar por completo?</h2>
+        <ul id="delete-file-list"></ul>
+        <button id="confirm-delete" class="btn-confirm green">Confirmar</button>
+        <button id="cancel-delete" class="btn-cancel red">Cancelar</button>
+    </div>
+</div>
+<body>
+<div class="cont_v_folder ">
+    <div class="cont_cont">  
+        <div class="cont_folder">        <!-- Contenedor principal -->
+            <div id="root"></div>
+        </div>
+    </div>
+    <div>
+    <div class="cont_cont_1">
+        <div class="cont_folder"></div>
+            <div id="root1"></div>
+        </div>
+    </div>
+</div>
+    <script src="./js/TreeTable.js"></script>
+    <script src="./js/trash.js"></script>
+
+</body>
+</html>

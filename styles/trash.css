@@ -1,0 +1,276 @@
+
+.box {
+    background: var(--surface-card, #fff);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1rem;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+thead {
+    background-color: #f9f9f9;
+}
+
+th, td {
+    padding: 0.75rem;
+    text-align: left;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+th {
+    font-weight: bold;
+}
+
+/* Nuevo: Contenedor de iconos */
+.icon-container-trash {
+    display: inline-block;
+    padding: 7px;
+    background-color: #d3d3d3;
+    border-radius: 5px;
+    margin-left: 10px;
+    cursor: not-allowed;
+}
+
+.icon-container-trash.active {
+    cursor: pointer;
+    background-color: #89baef;
+}
+
+
+
+/* Nuevo: Iconos de acción */
+.action-icon {
+    width: 20px;
+    height: 20px;
+}
+
+.archive-icon.active {
+    background-color:#2ecc70d8; /* Verde */
+}
+
+.trash-icon.active {
+    background-color: #e74d3c9c; /* Rojo */
+}
+
+.archive-icon.active:hover{
+    background-color: #2ECC71;
+}
+
+.trash-icon.active:hover{
+    background-color: #e74d3c;
+}
+
+.icon-container-trash.archive-icon.active img {
+    content: url('../assets/archive-out-w.svg');
+}
+
+.icon-container-trash.trash-icon.active img {
+    content: url('../assets/trash-w.svg');
+}
+
+.filter-section-trash{
+    position: relative; 
+    margin: 15px;
+    padding-left: 30px;
+    vertical-align: middle;
+}
+
+/* Nuevo: Sección de filtros */
+.filter-section-trash button {
+    margin: 0 0.25rem;
+    padding: 0.7rem 3.5rem;
+    border-radius: 10px;
+    border: 1px solid #f0eaea;
+    background-color: #fff;
+    cursor: pointer; 
+    font-weight: bold;
+}
+
+.filter-section-trash button:hover{
+    background-color: rgba(244, 244, 244, 0.603);
+}
+
+.filter-section-trash button:focus{
+    background-color: #3498DB;
+    color: #fff;
+    border-color: #89baef;
+}
+
+/* Nuevo: Contenedor de iconos en la sección de filtros */
+.filter-section-trash .icon-container-trash {
+    margin-left: 1rem;
+    display: inline-flex;
+    align-items: center;
+    vertical-align: middle;
+}
+
+.pagination-btn {
+    margin: 0 0.25rem;
+    padding: 0.7rem 1rem;
+    border-radius: 50%;
+    border: 1px  #ccc;
+    background-color: #fff;
+}
+
+.pagination-btn:hover, 
+.pagination-btn:focus {
+    background-color: rgba(242, 242, 242, 0.603);
+}
+
+.pagination-btn.active {
+    background-color: #3498dbc6;
+    color: #fff;
+    border-color: #3498dbc6;
+}
+
+.pagination-icone {
+    width: 20px; /* Ajusta el tamaño según sea necesario */
+    margin: 0 5px;
+    cursor: pointer;
+    border-radius: 50%;
+    border: 1px  #ccc;
+    background-color: #fff;
+    vertical-align: middle;
+}
+
+.pagination-icone:hover, 
+.pagination-icone:focus {
+    background-color: rgba(242, 242, 242, 0.435);
+}
+
+
+/* Estilo para los checkboxes */
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    vertical-align: middle;
+}
+
+.checkbox-container input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    margin-right: 0.5rem;
+}
+
+.checkbox-container input[type="checkbox"]:checked {
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+.checkbox-container input[type="checkbox"]:hover {
+    background-color: #e6f0ff;
+    border-color: #007bff;
+}
+
+.checkbox-container input[type="checkbox"]:focus {
+    outline: none;
+    box-shadow: 0 0 2px 2px rgba(0, 123, 255, 0.271);
+}
+
+.checkbox-container label {
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+/* Estilo para la celda de nombre que contiene el checkbox y el texto */
+.name-cell {
+    display: flex;
+    align-items: center;
+    vertical-align: middle;
+    
+}
+
+.recycle-header {
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 1rem;
+    background-color: #f0f0f0;
+    border-radius: 10px;
+}
+
+/* Estilos para los modales */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.btn-confirm,
+.btn-cancel {
+    margin: 10px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.green {
+    background-color: #2ecc70ce;
+    color: white;
+}
+
+.red {
+    background-color: #e74d3cd5;
+    color: white;
+}
+
+.green:hover{
+    background-color: #2ecc70;
+}
+
+.red:hover{
+    background-color: #e74d3c;
+}
+
+/* Estilos para los checkboxes */
+input[type="checkbox"] {
+    vertical-align: middle;
+    margin-right: 10px;
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+}
+.modal-content ul{
+    padding: 25px;
+}
+/* Estilos adicionales si es necesario */

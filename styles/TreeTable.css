@@ -1,0 +1,112 @@
+
+.card {
+    background: var(--surface-card, #fff);
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1rem;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+thead {
+    background-color: #f9f9f9;
+}
+
+th, td {
+    padding: 0.75rem;
+    text-align: left;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+th {
+    font-weight: bold;
+}
+
+/* flags.css */
+span.flag {
+    width: 44px;
+    height: 30px;
+    display: inline-block;
+}
+img.flag {
+    width: 30px;
+}
+
+/*   */
+.toggle-icon {
+    display: inline-block;
+    transition: transform 0.2s;
+    vertical-align: middle;
+    height: 25px; /* Ajusta el tamaño del icono según sea necesario */
+    margin-right: 1px; /* Ajusta el margen entre el icono y el texto */
+    border-radius: 50%;
+    border: 1px  #ccc;
+    background-color: #fff;
+}
+
+.toggle-icon.rotated {
+    transform: rotate(90deg);
+}
+
+.toggle-icon:hover,
+.toggle-icon:focus {
+    background-color: rgba(242, 242, 242, 0.603); /* Cambia el color del borde al pasar el cursor */
+} 
+
+td span {
+    vertical-align: middle; /* Asegura que el texto esté alineado con el icono */
+}
+
+.pagination-button {
+    margin: 0 0.25rem;
+    padding: 0.7rem 1rem;
+    border-radius: 50%;
+    border: 1px  #ccc;
+    background-color: #fff;
+    
+}
+
+.pagination-button:hover, 
+.pagination-button:focus {
+    background-color: rgba(242, 242, 242, 0.603);
+}
+
+.pagination-button.active {
+    background-color: #3498dbc6;
+    color: #fff;
+    border-color: #3498dbc6;
+}
+
+select {
+    padding: 0.5rem;
+    border-radius: 10%;
+    border: 1px solid #ccc;
+    background-color: #fff;
+}
+
+select:hover, 
+select :focus {
+    border-color: #3498db;
+}
+
+.pagination-icon {
+    width: 20px; /* Ajusta el tamaño según sea necesario */
+    margin: 0 5px;
+    cursor: pointer;
+    border-radius: 50%;
+    border: 1px  #ccc;
+    background-color: #fff;
+    vertical-align: middle;
+    
+}
+
+.pagination-icon:hover, 
+.pagination-icon:focus {
+    background-color: rgba(242, 242, 242, 0.435);
+}
+
+
