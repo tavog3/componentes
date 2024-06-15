@@ -3,6 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <link href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css" rel="stylesheet">
     <link rel="stylesheet" href="./styles/explore.css">
     <title>File Explorer</title>
@@ -37,15 +40,13 @@
             <button id="fe-delete-btn" class="fe-btn">
                 <i class='bx bxs-trash'></i> Borrar
             </button>
-            <button id="fe-close-selection-btn" class="fe-btn">
-                <i class='bx bxs-x-square'></i> Cerrar Selección
-            </button>
+            
         </div>
+
         <div id="breadcrumb"></div>
         <div id="file-list-container">
             <ul id="file-list">
                 <li class="file-header">
-                    <input type="checkbox" id="select-all">
                     <span>Name</span>
                     <span>Date Modified</span>
                     <span>File Size</span>
@@ -54,18 +55,18 @@
         </div>
     </div>
 
-    <!-- Modal para nuevo directorio -->
-    <div id="fe-modal-new-directory" class="fe-modal">
-        <div class="fe-modal-content">
-            <span id="fe-close-modal" class="fe-close">&times;</span>
-            <h2>Nuevo Directorio</h2>
-            <input type="text" id="fe-directory-name" placeholder="Nombre del Directorio">
-            <div class="fe-modal-actions">
-                <button id="fe-create-directory">Crear</button>
-                <button id="fe-cancel-directory">Cancelar</button>
-            </div>
+ <!-- Modal para nuevo directorio -->
+ <div id="fe-modal-new-directory" class="fe-modal">
+    <div class="fe-modal-content">
+        <span id="fe-close-modal" class="fe-close">&times;</span>
+        <h2>Nuevo Directorio</h2>
+        <input type="text" id="fe-directory-name" placeholder="Nombre del Directorio">
+        <div class="fe-modal-actions">
+            <button id="fe-create-directory">Crear</button>
+            <button id="fe-cancel-directory">Cancelar</button>
         </div>
     </div>
+</div>
 
 <!-- Modal para mover archivos -->
 <div id="fe-modal-move" class="fe-modal">
@@ -86,6 +87,8 @@
         </div>
     </div>
 </div>
+
+
 
 <!-- Modal para copiar archivos -->
 <div id="fe-modal-copy" class="fe-modal">
@@ -136,7 +139,6 @@
 
 
     <input type="file" id="fe-file-input" style="display:none" multiple>
-
     <script src="./js/explore.js"></script>
 </body>
 </html>
