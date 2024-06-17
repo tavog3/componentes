@@ -23,12 +23,13 @@ button{
 }
 
 #breadcrumb span:hover {
-    background-color: #f0f0f0; /* Cambia el color según tus preferencias */
+    background-color: #ECF0F1 ; /* Cambia el color según tus preferencias */
     border-radius: 3px;
 }
 
 #file-list-container {
     margin: 10Px;
+    
 }
 
 #file-list {
@@ -36,6 +37,7 @@ button{
     padding: 0;
     border: 1px solid #ccc;
     overflow: hidden; /* Oculta cualquier contenido desbordante */
+    border-radius: 5px;
 }
 
 #file-list li {
@@ -62,11 +64,11 @@ button{
 } 
 
 #file-list li:hover {
-    background-color: #BDC3C7;
+    background-color: #ECF0F1 ;
 }
 
 .selected {
-    background-color: #BDC3C7; /* Cambia el color según tus preferencias */
+    background-color: #ECF0F1 ; /* Cambia el color según tus preferencias */
     transform: scale(1.004); /* Aumenta el tamaño del texto */
     transform-origin: center; /* Centra el zoom */
     transition: transform 0.2s ease-in-out; /* Transición suave para el efecto de zoom */
@@ -109,8 +111,8 @@ button{
 }
 
 .fe-btn:hover {
-    background-color:  #BDC3C7;
-    color: #ffffff;
+    background-color:  #dfe4e6 ;
+    border-radius: 5px;
 }
 /*fin barra superior nuevo, subir... */
 
@@ -122,20 +124,22 @@ button{
     left: 0;
     top: 0;
     width: 100%;
-    height: 100%;
+    height: 10%;
     overflow: auto;
     background-color: rgba(0,0,0,0.4);
     padding-top: 60px;
+    
 }
 
 .fe-modal-content {
     background-color: #fefefe;
     margin: 5% auto;
     padding: 20px;
-    border: 1px solid #888;
+    border: 1px solid #ECF0F1 ;
     width: 80%;
     max-width: 400px;
     text-align: center;
+    border-radius: 5px;
 }
 
 .fe-close {
@@ -160,7 +164,25 @@ button{
 
 .fe-modal-actions button {
     padding: 10px 20px;
-    cursor: pointer;
+}
+
+#fe-create-directory {
+    background-color: #27ae5fe8;
+    border-style: none;
+    color: white;
+}
+
+#fe-create-directory:hover{
+    background-color: #27AE60;
+}
+
+#fe-cancel-directory {
+    background-color:  #e74d3ce9 ;
+    border-style: none;
+    color: white;
+}
+#fe-cancel-directory:hover {
+    background-color: #E74C3C ;
 }
 /*fin modal nuevo directorio*/
 
@@ -174,6 +196,7 @@ button{
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     padding: 10px;
     z-index: 1000; /* Asegurarse de que esté por encima de otros elementos */
+    border-radius: 5px;
 }
 
 .additional-actions .fe-btn {
@@ -187,7 +210,7 @@ button{
 }
 
 .additional-actions .fe-btn:hover {
-    background-color: #BDC3C7;
+    background-color:#ECF0F1 ;
     color: black;
 }
 /*fin Additional styles for context menu */
@@ -212,6 +235,7 @@ button{
     height: 200px;
     overflow-y: auto;
     border: 1px solid #ccc;
+    border-radius: 5px;
 }
 
 #move-file-list {
@@ -255,6 +279,25 @@ button{
     background-color: #f0f0f0;
     border-radius: 3px;
 }
+
+#fe-move-files {
+    background-color: #27ae5fd8;
+    border-style: none;
+    color: white;
+}
+#fe-move-files:hover{
+    background-color:  #27AE60; 
+}
+
+#fe-cancel-move {
+    background-color:  #e74d3ce9 ;
+    border-style: none;
+    color: white;
+}
+#fe-cancel-move:hover{
+    background-color:  #e74d3c ;
+}
+
 /*fin de estilo modal mover */
 
 
@@ -270,6 +313,7 @@ button{
     list-style: none; 
     padding: 0;
     margin: 0;
+    border-radius: 5px;
 }
 
 #copy-file-list li {
@@ -308,6 +352,24 @@ button{
     border-radius: 3px;
 }
 
+#fe-copy-files {
+    background-color: #27ae5fd8;
+    border-style: none;
+    color: white;
+}
+#fe-copy-files:hover{
+    background-color:  #27AE60; 
+}
+
+#fe-cancel-copy {
+    background-color:  #e74d3ce9 ;
+    border-style: none;
+    color: white;
+}
+#fe-cancel-copy:hover{
+    background-color:  #e74d3c ;
+}
+
 
 /* Styles for replace modal */
 .fe-modal {
@@ -331,6 +393,7 @@ button{
     border: 1px solid #888;
     width: 80%;
     max-width: 600px;
+    border-radius: 5px;
 }
 
 .fe-close {
@@ -378,6 +441,7 @@ button{
     width: 80%;
     max-width: 400px;
     text-align: center;
+    border-radius: 5px;
 }
 
 .close-edit {
@@ -403,5 +467,23 @@ button{
 .modal-edit-actions button {
     padding: 10px 20px;
     cursor: pointer;
+}
+
+#confirm-edit {
+    background-color: #27ae5fd8;
+    border-style: none;
+    color: white;
+}
+#confirm-edit:hover{
+    background-color:  #27AE60; 
+}
+
+#cancel-edit {
+    background-color:  #e74d3ce9 ;
+    border-style: none;
+    color: white;
+}
+#cancel-edit:hover{
+    background-color:  #e74d3c ;
 }
 /* fin Estilos para el modal de edición */
