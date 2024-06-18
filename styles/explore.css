@@ -57,6 +57,7 @@ button{
 }
 #file-list li span i {
     padding-right: 10px; /* Espacio entre el icono y el nombre del archivo */
+    font-size: 1.3em;
 }
 
 #file-list .file-header {
@@ -492,14 +493,5 @@ button{
     background-color:  #e74d3c ;
 }
 /* fin Estilos para el modal de edición */
-
-
-#file-list li i.bx {
-    margin-right: 0; /* Espacio entre el icono y el nombre del archivo */
-    font-size: 1.3em; /* Tamaño del icono */
-    align-items: stretch;
-    margin: 0;
-
-}
 
 
