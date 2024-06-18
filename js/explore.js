@@ -182,6 +182,7 @@ document.addEventListener('DOMContentLoaded', async function () {
          }
          renderFiles(currentFolder);
          selectFile(null);
+         console.log(data);
      });
      
 
@@ -420,31 +421,6 @@ function renderCopyFileList(folder) {
     }
 }
 
-// Función asincrónica para copiar archivos al destino seleccionado
-async function copyFiles(destination) {
-    for (let fileToCopy of filesToCopy) {
-        // Verificar si ya existe un archivo con el mismo nombre y tipo en el destino
-        const existingFile = destination.find(file => file.data.name === fileToCopy.data.name && file.data.type === fileToCopy.data.type);
-        if (existingFile) {
-            // Confirmar con el usuario si desea reemplazar el archivo existente
-            const confirmReplace = confirm(`Ya existe un archivo llamado ${fileToCopy.data.name} en esta carpeta con el mismo tipo. ¿Desea reemplazarlo?`);
-            if (confirmReplace) {
-                // Si se confirma, reemplazar el archivo existente con el nuevo
-                const index = destination.indexOf(existingFile);
-                destination.splice(index, 1, fileToCopy);
-            }
-        } else {
-            // Si no hay un archivo con el mismo nombre y tipo, simplemente copiarlo al destino
-            destination.push(fileToCopy);
-        }
-    }
-    // Renderizar la lista actualizada de archivos en la carpeta actual después de copiar
-    renderFiles(currentFolder);
-    // Ocultar el modal de copiar archivos después de completar la operación
-    copyModal.style.display = 'none';
-}
-
-
 /// Renderizar los breadcrumbs para mostrar la ubicación actual en la estructura de carpetas durante la copia
 function renderCopyBreadcrumb() {
     copyBreadcrumb.innerHTML = '';
@@ -481,8 +457,8 @@ cancelCopyButton.addEventListener('click', () => {
 // Manejar el evento de copiar archivos cuando se hace clic en el botón de copiar
 copyFilesButton.addEventListener('click', () => {
     // Obtener la carpeta de destino actual para copiar archivos
-    const currentDestination = copyPath[copyPath.length - 1].data;
-    const filesToReplace = [];
+    currentDestination = copyPath[copyPath.length - 1].data;
+    filesToReplace = [];
     // Iterar sobre los archivos seleccionados para copiar y manejar los reemplazos si es necesario
     filesToCopy.forEach(file => {
         // Verificar si ya existe un archivo con el mismo nombre y tipo en la carpeta de destino
@@ -498,12 +474,12 @@ copyFilesButton.addEventListener('click', () => {
     });
     if (filesToReplace.length > 0) {
         // Si hay archivos para reemplazar, mostrar el modal de reemplazo correspondiente
-        renderReplaceFileList(filesToReplace);
+       // renderReplaceFileList(filesToReplace);
         copyModal.style.display = 'none'; // Ocultar el modal de copiar archivos
         replaceModal.style.display = 'block'; // Mostrar el modal de reemplazar archivos
     } else {
         // Si no hay archivos para reemplazar, renderizar la lista de archivos en la carpeta actual
-        renderFiles(currentFolder);
+        renderCopyFileList(currentFolder);
         copyModal.style.display = 'none'; // Ocultar el modal de copiar archivos
     }
 });
@@ -529,10 +505,11 @@ confirmReplaceButton.addEventListener('click', () => {
         }
     });
     // Renderizar la lista actualizada de archivos en la carpeta actual después de realizar los reemplazos
-    renderFiles(currentFolder);
+    renderCopyFileList(currentFolder);
     // Ocultar el modal de reemplazo después de completar la operación
     replaceModal.style.display = 'none';
 });
+
 
 // Función para buscar un archivo por nombre dentro de una estructura de carpetas
 function findFileByName(folder, name) {
@@ -608,6 +585,96 @@ confirmEditButton.addEventListener('click', () => {
         console.error('El nombre del archivo no puede estar vacío.');
     }
 });
+
+
+
+//funcion para los iconos
+function getFileIcon(name, type) {
+    const extension = name.includes('.') ? name.split('.').pop().toLowerCase() : '';
+    
+    if (extension) {
+        switch (extension) {
+            case 'png':
+            case 'jpeg':
+            case 'jpg':
+            case 'gif':
+            case 'bmp':
+            case 'svg':
+                return '<i class="bx bxs-image"></i>'; // Ícono de imagen
+            case 'txt':
+                return '<i class="bx bxs-file-txt"></i>'; // Ícono de txt
+            case 'doc':
+            case 'docx':
+                return '<i class="bx bxs-file-doc"></i>'; // Ícono de doc
+            case 'xlsx':
+            case 'xls':  
+                 return '<i class="fa-solid fa-file-csv"></i>'; // Ícono de doc  <i class="fa-solid fa-file-xls"></i>  
+            case 'pdf':
+                return '<i class="bx bxs-file-pdf"></i>'; // Ícono de archivo de texto
+            case 'mp4':
+            case 'mkv':
+            case 'avi':
+                return '<i class="bx bxs-videos"></i>'; // Ícono de video
+            case 'mp3':
+            case 'wav':
+            case 'flac':
+                return '<i class="bx bxs-music"></i>'; // Ícono de audio
+            case 'zip':
+            case 'rar':
+                return '<i class="bx bxs-file-archive"></i>';
+            default:
+                return '<i class="bx bx-file-blank"></i>'; // Ícono genérico de archivo
+        }
+    } else {
+        switch (type) {
+            case 'Folder':
+                return '<i class="bx bx-folder"></i>'; // Ícono de carpeta
+            case 'Image':
+                return '<i class="bx bxs-image"></i>'; // Ícono de imagen
+            case 'Text':
+                return '<i class="bx bx-file"></i>'; // Ícono de archivo de texto
+            case 'Video':
+                return '<i class="bx bx-video"></i>'; // Ícono de video
+            case 'Audio':
+                return '<i class="bx bx-music"></i>'; // Ícono de audio
+            default:
+                return '<i class="bx bx-file-blank"></i>'; // Ícono genérico de archivo
+        }
+    }
+}
+
+function renderFiles(folder) {
+    const fileList = document.getElementById('file-list');
+    const fileHeader = fileList.querySelector('.file-header');
+    fileList.innerHTML = '';
+    fileList.appendChild(fileHeader);
+
+    if (folder && folder.length > 0) {
+        folder.forEach(file => {
+            const li = document.createElement('li');
+            const iconHtml = getFileIcon(file.data.name, file.data.type); // Obtiene el HTML del icono
+            li.innerHTML = `
+                <span>${iconHtml} ${file.data.name}</span>
+                <span>${file.data ? new Date().toLocaleDateString() : 'Unknown'}</span>
+                <span>${file.data ? file.data.size : 'Unknown'}</span>
+            `;
+            li.addEventListener('click', () => selectFile(li, file));
+            if (file.data && file.data.type === 'Folder') {
+                li.addEventListener('dblclick', () => {
+                    currentPath.push({ name: file.data.name, data: file.children });
+                    currentFolder = file.children;
+                    renderBreadcrumb();
+                    renderFiles(file.children);
+                });
+            }
+            fileList.appendChild(li);
+        });
+    } else {
+        const emptyMessage = document.createElement('li');
+        emptyMessage.textContent = 'No files or folders here.';
+        fileList.appendChild(emptyMessage);
+    }
+}
 
 
 });
